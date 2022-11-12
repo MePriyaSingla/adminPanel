@@ -1,0 +1,61 @@
+:root {
+  --offcanvas-width: 270px;
+  --topNavbarHeight: 56px;
+}
+
+body {
+  background-color: #e3e8f0;
+}
+
+.company-person {
+  display: none;
+}
+
+.sidebar-nav {
+  width: var(--offcanvas-width) !important;
+  background-color: #e3e8f0 !important;
+  border-color: #e3e8f0 !important;
+}
+
+.sidebar-link {
+  display: flex;
+  align-items: center;
+}
+
+.sidebar-link .right-icon {
+  display: inline-flex;
+}
+
+.sidebar-link[aria-expanded="true"] .right-icon {
+  transform: rotate(180deg);
+  transition: all 150ms ease-in-out;
+}
+
+.active {
+  background-color: rgb(201, 201, 201);
+  font-weight: bold;
+}
+
+@media (min-width: 992px) {
+  body {
+    overflow: auto !important;
+  }
+  main {
+    margin-left: var(--offcanvas-width);
+  }
+  .company-person {
+    display: inline;
+  }
+  .offcanvas-backdrop {
+    display: none !important;
+  }
+  .sidebar-nav {
+    transform: none !important;
+    visibility: visible !important;
+    top: var(--topNavbarHeight) !important;
+    height: calc(100% - var(--topNavbarHeight)) !important;
+  }
+  .brand-div {
+    width: var(--offcanvas-width) !important;
+  }
+}
